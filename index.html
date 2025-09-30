@@ -11,8 +11,8 @@
       font-family: 'Orbitron', sans-serif;
       background: linear-gradient(to bottom, #060b1a, #000000);
       color: white;
-      text-align: left;
-      direction: ltr;
+      text-align: center;
+      direction: ltr; /* текст слева направо */
     }
     .button {
       background: linear-gradient(45deg, #d4145a, #fbb03b);
@@ -26,6 +26,7 @@
       box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
       text-decoration: none;
       display: inline-block;
+      text-align: center;
     }
     .button-green {
       background: linear-gradient(45deg, #0f0, #0c0);
@@ -45,6 +46,7 @@
       border-collapse: collapse;
       width: 80%;
       margin-bottom: 40px;
+      text-align: left; /* таблица слева */
     }
     th, td {
       padding: 12px;
@@ -57,14 +59,17 @@
       border-radius: 15px;
       max-width: 700px;
       display: flex;
+      flex-direction: row-reverse; /* фото справа */
       align-items: center;
-      flex-direction: row-reverse;
     }
     .comment img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      margin-right: 15px;
+      margin-left: 15px;
+    }
+    .comment-info {
+      text-align: left; /* текст слева от фото */
     }
     .comment-info span:first-child {
       display: block;
@@ -147,12 +152,10 @@
       display.textContent = `🚀 Sinjal i ri gati: ×${multiplier}`;
 
       signalIndex = (signalIndex + 1) % predefinedSignals.length;
-
-      setTimeout(() => {
-        signalActive = false;
-      }, 9000);
+      setTimeout(() => { signalActive = false; }, 9000);
     }
   </script>
 </body>
 </html>
+
 
